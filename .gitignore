@@ -4,3 +4,10 @@
 *.jar
 *.war
 *.ear
+/target
+/.settings/
+/deployments/
+.classpath
+.directory
+.gitkeep
+.project
