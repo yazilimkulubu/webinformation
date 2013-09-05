@@ -2,18 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
-
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Fırat Üniversitesi Yazılım Kulübü ACM Student Chapter |
 		Web Information System</title>
-
 	<!-- Meta -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
-
 	<!-- CSS Global Compulsory-->
 	<link rel="stylesheet"
 		href="/assets/plugins/bootstrap/css/bootstrap.min.css" />
@@ -26,14 +24,16 @@
 	<!-- CSS Implementing Plugins -->
 	<link rel="stylesheet"
 		href="/assets/plugins/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="/assets/plugins/flexslider/flexslider.css"
+		type="text/css" media="screen" />
 	<!-- CSS Theme -->
 	<link rel="stylesheet" href="/assets/css/themes/default.css"
 		id="style_color" />
 	<link rel="stylesheet" href="/assets/css/themes/headers/default.html"
 		id="style_color-header-1" />
 </h:head>
-<h:body>
 
+<h:body>
 	<!--=== Style Switcher ===-->
 	<!--/style-switcher-->
 	<!--=== End Style Switcher ===-->
@@ -88,7 +88,8 @@
 									<li><a href="/oracle">Oracle</a></li>
 									<li><a href="/microsoft">Microsoft .Net Platform</a></li>
 								</ul> <b class="caret-out"></b></li>
-							<li><a href="/script">SCRİPT<b class="caret"></b>
+							<li class="active"><a href="/script">SCRİPT<b
+									class="caret"></b>
 							</a> <b class="caret-out"></b></li>
 							<li><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">Referanslarımız<b class="caret"></b>
@@ -123,12 +124,12 @@
 	<!--=== End Header ===-->
 
 	<!--=== Breadcrumbs ===-->
-	<div class="breadcrumbs margin-bottom-40">
+	<div class="breadcrumbs margin-bottom-60">
 		<div class="container">
-			<h1 class="color-green pull-left">Erişim Engellendi</h1>
+			<h1 class="pull-left">Script</h1>
 			<ul class="pull-right breadcrumb">
 				<li><a href="/">Anasayfa</a> <span class="divider">/</span></li>
-				<li class="active">403</li>
+				<li class="active">Script</li>
 			</ul>
 		</div>
 		<!--/container-->
@@ -138,10 +139,115 @@
 
 	<!--=== Content Part ===-->
 	<div class="container">
-		<div class="row-fluid page-404">
-			<p>
-				<i>403</i> <span>Erişim Engellendi</span>
-			</p>
+		<div class="row-fluid">
+			<!-- Pricing -->
+			<div class="row-fluid margin-bottom-40">
+
+				<div class="span3 pricing hover-effect">
+					<div class="pricing-head">
+						<h3>
+							Script<span>Türkiye'nin Tek Yazılım Dergisi</span>
+						</h3>
+						<h4>
+							1<i>.Sayı</i>
+						</h4>
+					</div>
+					<ul class="pricing-content unstyled">
+						<li><i class="icon-tags"></i>SQL Yazı Dizisi</li>
+						<li><i class="icon-tags"></i>Subversion</li>
+						<li><i class="icon-tags"></i>Nesne Tabanlı Dillerle
+							Anlaşabilmek</li>
+						<li><i class="icon-star"></i>Kıvanç USLU ile Röportaj</li>
+					</ul>
+					<div class="pricing-footer">
+						<p>
+							<a
+								href="http://script.yazilimkulubu.com/script-Aylik_Teknoloji_Dergisi/sayi_1/"
+								class="btn-u" target="_blank" style="text-decoration: none">Oku</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="span3 pricing hover-effect">
+					<div class="pricing-head">
+						<h3>
+							Script<span>Türkiye'nin Tek Yazılım Dergisi</span>
+						</h3>
+						<h4>
+							2<i>.Sayı</i>
+						</h4>
+					</div>
+					<ul class="pricing-content unstyled">
+						<li><i class="icon-tags"></i>Android</li>
+						<li><i class="icon-tags"></i>Hibernate</li>
+						<li><i class="icon-tags"></i>CSS</li>
+						<li><i class="icon-star"></i>Muharrem TAÇ ile Röportaj</li>
+					</ul>
+					<div class="pricing-footer">
+						<p>
+							<a
+								href="http://script.yazilimkulubu.com/script-Aylik_Teknoloji_Dergisi/sayi_2/"
+								class="btn-u" target="_blank" style="text-decoration: none">Oku</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="span3 pricing hover-effect">
+					<div class="pricing-head">
+						<h3>
+							Script<span>Türkiye'nin Tek Yazılım Dergisi</span>
+						</h3>
+						<h4>
+							3<i>.Sayı</i>
+						</h4>
+					</div>
+					<ul class="pricing-content unstyled">
+						<li><i class="icon-tags"></i>SOPA</li>
+						<li><i class="icon-tags"></i>HTML5</li>
+						<li><i class="icon-tags"></i>Dijital Oyun Endüstrisi</li>
+						<li><i class="icon-star"></i>Mimar ASLAN ile Röportaj</li>
+					</ul>
+					<div class="pricing-footer">
+						<p>
+							<a
+								href="http://script.yazilimkulubu.com/script-Aylik_Teknoloji_Dergisi/sayi_3/"
+								class="btn-u" target="_blank" style="text-decoration: none">Oku</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="span3 pricing hover-effect">
+					<div class="pricing-head">
+						<h3>
+							Script<span>Türkiye'nin Tek Yazılım Dergisi</span>
+						</h3>
+						<h4>
+							4<i>.Sayı</i>
+						</h4>
+					</div>
+					<ul class="pricing-content unstyled">
+						<li><i class="icon-tags"></i>Yakında..</li>
+						<li><i class="icon-tags"></i>Yakında..</li>
+						<li><i class="icon-tags"></i>Yakında..</li>
+						<li><i class="icon-star"></i>Yakında..</li>
+					</ul>
+					<div class="pricing-footer">
+						<p>
+							<a href="#" class="btn-u" target="_blank"
+								style="text-decoration: none">Oku</a>
+						</p>
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+			<!--/row-fluid-->
+			<!--//End Pricing -->
+			<!--/row-fluid-->
+			<!--//End Pricing "No Spacing" -->
 		</div>
 		<!--/row-fluid-->
 	</div>
@@ -180,12 +286,11 @@
 						</div>
 						<dl class="dl-horizontal">
 							<dt>
-								<a href="#"><img src="/assets/img/sliders/elastislide/6.jpg"
-									alt="" /></a>
+								<a href="#"></a>
 							</dt>
 							<dd>
 								<p>
-									<a href="#">Sitemiz yapım aşamasında..</a>
+									<a href="#">Yapım aşamasında..</a>
 								</p>
 							</dd>
 						</dl>
@@ -273,10 +378,27 @@
         App.init();
     });
 </script>
+
+	<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-43131341-1']);
+_gaq.push(['_setDomainName', 'www.yazilimkulubu.org']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript';
+  ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+  'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
 	<!--[if lt IE 9]>
     <script src="/assets/js/respond.js"></script>
 <![endif]-->
-
-
 </h:body>
 </html>
