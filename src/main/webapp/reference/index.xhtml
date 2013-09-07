@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Fırat Üniversitesi Yazılım Kulübü ACM Student Chapter |
+		Web Information System</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- CSS Global Compulsory-->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/headers/header1.css"/>
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="/assets/css/style_responsive.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>        
+    <!-- CSS Implementing Plugins -->    
+    <link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/assets/plugins/flexslider/flexslider.css" type="text/css" media="screen"/>          
+    <!-- CSS Theme -->    
+    <link rel="stylesheet" href="/assets/css/themes/default.css" id="style_color"/>
+    <link rel="stylesheet" href="/assets/css/themes/headers/default.html" id="style_color-header-1"/>    
+</h:head> 
+
+<h:body>
+	<!--=== Top ===-->
+	<div class="top">
+		<div class="container">
+			<ul class="loginbar pull-right">
+				<li class="devider">&nbsp;</li>
+				<li><a href="/login" class="login-btn">GİRİŞ</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--/top-->
+	<!--=== End Top ===-->
+	<!--=== Header ===-->
+	<div class="header">
+		<div class="container">
+			<!-- Logo -->
+			<div class="logo">
+				<a href="/"><img id="logo-header" src="/assets/img/logo3.png"
+					alt="Logo" /></a>
+			</div>
+			<!-- /logo -->
+
+			<!-- Menu -->
+			<div class="navbar">
+				<div class="navbar-inner">
+					<a class="btn btn-navbar" data-toggle="collapse"
+						data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
+					</a>
+					<!-- /nav-collapse -->
+					<div class="nav-collapse collapse">
+						<ul class="nav top-2">
+							<li ><a href="/">Anasayfa <b class="caret"></b>
+							</a> <b class="caret-out"></b></li>
+							<li><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">ETKİNLİKLERİMİZ <b class="caret"></b>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="/event">Etkinlikler</a></li>
+									<li><a href="/education">Eğitimler</a></li>
+									<li><a href="/contest">Yarışmalar</a></li>
+								</ul> <b class="caret-out"></b></li>
+							<li><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">Çalışma Grupları <b class="caret"></b>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="/opensource">Open Source</a></li>
+									<li><a href="/oracle">Oracle</a></li>
+									<li><a href="/microsoft">Microsoft .Net Platform</a></li>
+								</ul> <b class="caret-out"></b></li>
+							<li><a href="/script">SCRİPT<b class="caret"></b>
+							</a> <b class="caret-out"></b></li>
+							<li class="active"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">Referanslarımız<b class="caret"></b>
+							</a>
+								<ul class="dropdown-menu">
+									<li class="active"><a href="/reference">Referanslar</a></li>
+									<li><a href="/sponsor">Sponsorlar</a></li>
+								</ul> <b class="caret-out"></b></li>
+							<li><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">Hakkımızda <b class="caret"></b>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="/about">Yazılım Kulübü</a></li>
+									<li><a href="/acm">ACM</a></li>
+									<li><a href="/acmwomen">ACM Women</a></li>
+									<li><a href="/board">Yönetim Kurulu</a></li>
+									<li><a href="/supervisory">Denetleme Kurulu</a></li>
+								</ul> <b class="caret-out"></b></li>
+							<li><a href="/contact">İLETİŞİM <b class="caret"></b>
+							</a> <b class="caret-out"></b></li>
+						</ul>
+					</div>
+					<!-- /nav-collapse -->
+				</div>
+				<!-- /navbar-inner -->
+			</div>
+			<!-- /navbar -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!--/header -->
+	<!--=== End Header ===-->
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-40">
+	<div class="container">
+        <h1 class="pull-left">Referanslar</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="/">Anasayfa</a> <span class="divider">/</span></li>
+            <li class="active">Referanslar</li>
+        </ul>
+    </div><!--/container-->
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part ===-->
+<div class="container">		
+	<div class="row-fluid">
+    	<!-- Our Services -->
+		<div class="row-fluid">
+            <p>Bizleri kırmayıp davetimize icabet ettikleri ve deneyimlerini bizlerle paylaştıkları için teşekkür ederiz.</p>
+
+			<div class="row-fluid servive-block">
+                <div class="span4">
+                    <h4>İbrahim DEMİR</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>IBM YAzılım Akademisi 2012</p>
+                </div>
+                <div class="span4">
+                    <h4>Muharrem TAÇ</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Android Eğitimi</p>
+                </div>
+                <div class="span4">
+                    <h4>Tamer ŞAHİN</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Türkiye'nin ilk Hackeı</p>
+                </div>
+            </div><!--/row-fluid-->
+
+			<div class="row-fluid servive-block">
+                <div class="span4">
+                    <h4>Mustafa KASAP</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Microsoft ve Nokia Gençsen Geleceksin 5.0 </p>
+                </div>
+                <div class="span4">
+                    <h4>Yaşar ATEŞSOY</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri</p>
+                </div>
+                <div class="span4">
+                    <h4>INETA TR</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri</p>
+                </div>
+            </div>
+            <!--/row-fluid-->
+            
+            <div class="row-fluid servive-block">
+                <div class="span4">
+                    <h4>Ali YILDIZ</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Veriden Geleceğe - Datawarehouse</p>
+                </div>
+                <div class="span4">
+                    <h4>Ercan YAZGAN</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Veriden Geleceğe - Datawarehouse</p>
+                </div>
+                <div class="span4">
+                    <h4>Yusuf ASLAN</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Veriden Geleceğe - Datawarehouse</p>
+                </div>
+            </div><!--/row-fluid-->
+            
+            <div class="row-fluid servive-block">
+                <div class="span4">
+                    <h4>Mustafa AKSOY</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Veriden Geleceğe - Datawarehouse</p>
+                </div>
+                <div class="span4">
+                    <h4>Talip Hakan ÖZTÜRK</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Geleceğe Adım Adım - Datawarehouse</p>
+                </div>
+                <div class="span4">
+                    <h4>Veysel Uğuz KIZMAZ</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Yazılım Dilleri Günü</p>
+                </div>
+            </div><!--/row-fluid-->
+            
+            <div class="row-fluid servive-block">
+                <div class="span4">
+                    <h4>Daron YÖNDEM</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Yazılım Dİlleri Günü</p>
+                </div>
+                <div class="span4">
+                    <h4>Fatih BOY</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Yazılım Dİlleri Günü</p>
+                </div>
+                <div class="span4">
+                    <h4>Muhammed ÖNAL</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Yazılım Dilleri Günü</p>
+                </div>
+            </div><!--/row-fluid-->
+            
+            <div class="row-fluid servive-block">
+                <div class="span4">
+                    <h4>Siber Güvenlik Derneği</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Siber Savaş ve Siber Güvenlik</p>
+                </div>
+                <div class="span4">
+                    <h4>Şeref Burak SELVİ</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri '13</p>
+                </div>
+                <div class="span4">
+                    <h4>Savaş DOĞAN</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri '13</p>
+                </div>
+            </div><!--/row-fluid-->
+            
+            <div class="row-fluid servive-block">
+                <div class="span4">
+                    <h4>Gürcan SERBEST</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri '13</p>
+                </div>
+                <div class="span4">
+                    <h4>Yiğit ERGENÇ</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri '13</p>
+                </div>
+                <div class="span4">
+                    <h4>İlker AKSU</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri '13</p>
+                </div>
+            </div><!--/row-fluid-->
+            
+            <div class="row-fluid servive-block">
+                <div class="span4">
+                    <h4>Yrd.Doç.Dr.Mustafa KARAKAPLAN</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri '13</p>
+                </div>
+                <div class="span4">
+                    <h4>Yalçın PEMBECİOĞLU</h4>
+                    <p><i class="icon-thumbs-up"></i></p>
+                    <p>Kariyer ve Bilişim Günleri '13</p>
+                </div>
+                
+            </div><!--/row-fluid-->
+            
+        </div><!--/row-fluid-->        
+    	<!--//End Our Services -->
+    </div><!--/row-fluid-->
+
+	<!-- Tabs and Carousel-->
+	<div class="row-fluid margin-bottom-10">
+        <!-- Accardion and Posts -->
+    	<div class="span7">
+			<ul class="thumbnails team" style="margin-top:120px; " >
+                <img src="/assets/img/bg1.jpg" alt="" />
+          	</ul>
+        </div><!--/span7-->
+
+		<!-- Carousel -->
+    	<div class="span5">
+			<div class="headline"><h3>Referanslarımız</h3></div>
+			<div id="myCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="item active">
+                    <img src="/assets/img/carousel/3.jpg" alt=""/>
+                    <div class="carousel-caption">
+                      <h4>Muharrem TAÇ</h4>
+                      <p>Android uzmanı Muharrem TAÇ'ın Script'e verdiği röportaj ve düzenlemiş olduğumuz Android eğitimi.</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="/assets/img/carousel/14.jpg" alt=""/>
+                    <div class="carousel-caption">
+                      <h4>YazılımDilleri.net Ekibi</h4>
+                      <p>Daron YÖNDEM, Fatih BOY, Muhammed Önal ve Veysel Uğur KIZMAZ ile gerçekleştirdiğimiz bir etkinlik sonrası.</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="/assets/img/carousel/18.JPG" alt=""/>
+                    <div class="carousel-caption">
+                      <h4>Savaş DOĞAN</h4>
+                      <p>Kariyer ve Bilişim Günleri '13</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="/assets/img/carousel/16.JPG" alt=""/>
+                    <div class="carousel-caption">
+                      <h4>Gürcan SERBEST - Yiğit ERGENÇ</h4>
+                      <p>Kariyer ve Bilişim Günleri '13</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-arrow">
+                    <a data-slide="prev" href="#myCarousel" class="left carousel-control"><i class="icon-angle-left"></i></a>
+                    <a data-slide="next" href="#myCarousel" class="right carousel-control"><i class="icon-angle-right"></i></a>
+                </div>
+			</div>
+        </div><!--/span5-->
+    </div><!--/row-fluid-->
+	<!-- //End Tabs and Carousel -->
+
+    <!-- Our Clients -->
+		<div id="clients-flexslider" class="flexslider home clients">
+			<div class="headline">
+				<h3>En önemli teknolojiler</h3>
+			</div>
+			<p>Fırat Üniversitesi Yazılım Kulübü Web Information System;
+				işleri, ileri yazılım ve donanım teknolojileriyle destekler</p>
+			<ul style="margin-left: 85px; margin-right: auto;">
+				<li><a href="http://java.net/" target="_blank"
+					style="text-decoration: none"> <img
+						src="/assets/img/tech/java-grey.png" alt="" /> <img
+						src="/assets/img/tech/java.png" class="color-img" alt="" />
+				</a></li>
+				<li><a href="https://www.openshift.com/" target="_blank"
+					style="text-decoration: none"> <img
+						src="/assets/img/tech/opens-grey.png" alt="" /> <img
+						src="/assets/img/tech/opens.png" class="color-img" alt="" />
+				</a></li>
+				<li><a href="http://primefaces.org/" target="_blank"
+					style="text-decoration: none"> <img
+						src="/assets/img/tech/prime-grey.png" alt="" /> <img
+						src="/assets/img/tech/prime.png" class="color-img" alt="" />
+				</a></li>
+				<li><a href="http://www.jboss.org/" target="_blank"
+					style="text-decoration: none"> <img
+						src="/assets/img/tech/jboss-grey.png" alt="" /> <img
+						src="/assets/img/tech/jboss.png" class="color-img" alt="" />
+				</a></li>
+				<li><a href="http://twitter.github.io/bootstrap/‎"
+					target="_blank" style="text-decoration: none"> <img
+						src="/assets/img/tech/bootstrap-grey.png" alt="" /> <img
+						src="/assets/img/tech/bootstrap.png" class="color-img" alt="" />
+				</a></li>
+				<li><a href="https://www.jboss.org/jbossas/" target="_blank"
+					style="text-decoration: none"> <img
+						src="/assets/img/tech/as7-grey.png" alt="" /> <img
+						src="/assets/img/tech/as7.png" class="color-img" alt="" />
+				</a></li>
+				<li><a href="http://www.postgresql.org/" target="_blank"
+					style="text-decoration: none"> <img
+						src="/assets/img/tech/postgres-grey.png" alt="" /> <img
+						src="/assets/img/tech/postgres.png" class="color-img" alt="" />
+				</a></li>
+			</ul>
+		</div>
+		<!--/flexslider-->
+		<!-- //End Our Clients -->
+</div><!--/container-->		
+<!--=== End Content Part ===-->
+
+	<!--=== Footer ===-->
+	<div class="footer">
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span4">
+					<!-- About -->
+					<div class="headline">
+						<h3>Hakkında</h3>
+					</div>
+					<p class="margin-bottom-25">Fırat Üniversitesi Yazılım Kulübü
+						ACM Student Chapter</p>
+					<!-- Monthly Newsletter -->
+					<div class="headline">
+						<h3>Duyuru</h3>
+					</div>
+					<p>Haber bültenimize abone olun ve en son haber, etkinlik,
+						eğitim, yarışma ve projeler hakkında güncel kalın!</p>
+					<form class="form-inline">
+						<div class="input-append">
+							<input type="text" placeholder="Email Adres" class="input-medium" />
+							<button class="btn-u">Abone Ol</button>
+						</div>
+					</form>
+				</div>
+				<!--/span4-->
+
+				<div class="span4">
+					<div class="posts">
+						<div class="headline">
+							<h3>En Son</h3>
+						</div>
+						<dl class="dl-horizontal">
+							<dt>
+								<a href="#"><img src="/assets/img/sliders/elastislide/6.jpg"
+									alt="" /></a>
+							</dt>
+							<dd>
+								<p>
+									<a href="#">Sitemiz yapım aşamasında..</a>
+								</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!--/span4-->
+
+				<div class="span4">
+					<!-- Monthly Newsletter -->
+					<div class="headline">
+						<h3>İletişim</h3>
+					</div>
+					<address>
+						Fırat Üniversitesi Bilgisayar Mühendisliği 3.Kat<br />
+						Elazığ/TÜRKİYE <br /> Phone: +90 (424) -- -- <br /> Email: <a
+							href="mailto:info@yazilimkulubu.org">info@yazilimkulubu.org</a>
+					</address>
+
+					<!-- Stay Connected -->
+					<div class="headline">
+						<h3>Bağlı Kalın</h3>
+					</div>
+					<ul class="social-icons">
+						<li><a href="#" data-original-title="Feed" class="social_rss"></a></li>
+						<li><a href="https://www.facebook.com/FUYazilimKulubu"
+							data-original-title="Facebook" class="social_facebook"
+							target="_blank" style="text-decoration: none"></a></li>
+						<li><a href="https://twitter.com/FuYazilimKulubu"
+							data-original-title="Twitter" class="social_twitter"
+							target="_blank" style="text-decoration: none"></a></li>
+						<li><a href="https://plus.google.com/116997037207980875566"
+							data-original-title="Goole Plus" class="social_googleplus"
+							target="_blank" style="text-decoration: none"></a></li>
+						<li><a href="#" data-original-title="Pinterest"
+							class="social_pintrest"></a></li>
+						<li><a href="#" data-original-title="Linkedin"
+							class="social_linkedin"></a></li>
+						<li><a href="#" data-original-title="Vimeo"
+							class="social_vimeo"></a></li>
+					</ul>
+				</div>
+				<!--/span4-->
+			</div>
+			<!--/row-fluid-->
+		</div>
+		<!--/container-->
+	</div>
+	<!--/footer-->
+	<!--=== End Footer ===-->
+
+	<!--=== Copyright ===-->
+	<div class="copyright">
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span8">
+					<p>
+						2013 &copy; Fırat JUG. Tüm Hakları Saklıdır. <a
+							href="http://firatjug.blogspot.com" target="_blank"
+							style="text-decoration: none">Fırat JUG</a> | <a
+							href="http://firatjug.blogspot.com" target="_blank"
+							style="text-decoration: none">Fırat JBUG</a>
+					</p>
+				</div>
+				<div class="span4">
+					<a href="/"><img id="logo-footer" src="/assets/img/logo4.png"
+						class="pull-right" alt="" /></a>
+				</div>
+			</div>
+			<!--/row-fluid-->
+		</div>
+		<!--/container-->
+	</div>
+	<!--/copyright-->
+	<!--=== End Copyright ===-->
+
+	<!-- JS Global Compulsory -->
+	<script type="text/javascript" src="/assets/js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="/assets/js/modernizr.custom.js"></script>
+	<script type="text/javascript"
+		src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- JS Implementing Plugins -->
+	<script type="text/javascript"
+		src="/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/assets/plugins/back-to-top.js"></script>
+	<script type="text/javascript"
+		src="/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+	<script type="text/javascript"
+		src="/assets/plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<!-- JS Page Level -->
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+	<script type="text/javascript" src="/assets/js/pages/index.js"></script>
+	<script type="text/javascript">
+    jQuery(document).ready(function() {
+      	App.init();
+        App.initSliders();
+        Index.initRevolutionSlider();        
+    });
+</script>
+	<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-43131341-1']);
+_gaq.push(['_setDomainName', 'www.yazilimkulubu.org']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript';
+  ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+  'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+	<!--[if lt IE 9]>
+    <script src="/assets/js/respond.js"></script>
+<![endif]-->
+</h:body>
+</html>
