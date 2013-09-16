@@ -71,8 +71,8 @@
 					<!-- /nav-collapse -->
 					<div class="nav-collapse collapse">
 						<ul class="nav top-2">
-							<li class="active"><a href="/">Anasayfa <b class="caret"></b>
-							</a> <b class="caret-out"></b></li>
+							<li class="active"><a href="/">Anasayfa </a> <b
+								class="caret-out"></b></li>
 							<li><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">ETKİNLİKLERİMİZ <b class="caret"></b>
 							</a>
@@ -89,8 +89,7 @@
 									<li><a href="/oracle">Oracle</a></li>
 									<li><a href="/microsoft">Microsoft .Net Platform</a></li>
 								</ul> <b class="caret-out"></b></li>
-							<li><a href="/script">SCRİPT<b class="caret"></b>
-							</a> <b class="caret-out"></b></li>
+							<li><a href="/script">SCRİPT</a><b class="caret-out"></b></li>
 							<li><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">Referanslarımız<b class="caret"></b>
 							</a>
@@ -108,8 +107,7 @@
 									<li><a href="/board">Yönetim Kurulu</a></li>
 									<li><a href="/supervisory">Denetleme Kurulu</a></li>
 								</ul> <b class="caret-out"></b></li>
-							<li><a href="/contact">İLETİŞİM <b class="caret"></b>
-							</a> <b class="caret-out"></b></li>
+							<li><a href="/contact">İLETİŞİM </a> <b class="caret-out"></b></li>
 						</ul>
 					</div>
 					<!-- /nav-collapse -->
@@ -479,8 +477,8 @@
 						src="/assets/img/tech/jboss-grey.png" alt="" /> <img
 						src="/assets/img/tech/jboss.png" class="color-img" alt="" />
 				</a></li>
-				<li><a href="http://getbootstrap.com/"
-					target="_blank" style="text-decoration: none"> <img
+				<li><a href="http://getbootstrap.com/" target="_blank"
+					style="text-decoration: none"> <img
 						src="/assets/img/tech/bootstrap-grey.png" alt="" /> <img
 						src="/assets/img/tech/bootstrap.png" class="color-img" alt="" />
 				</a></li>
@@ -517,14 +515,17 @@
 					<div class="headline">
 						<h3>Duyuru</h3>
 					</div>
-					<p>Haber bültenimize abone olun ve en son haber, etkinlik,
+					<p >Haber bültenimize abone olun ve en son haber, etkinlik,
 						eğitim, yarışma ve projeler hakkında güncel kalın!</p>
-					<form class="form-inline">
-						<div class="input-append">
-							<input type="text" placeholder="Email Adres" class="input-medium" />
-							<button class="btn-u">Abone Ol</button>
-						</div>
-					</form>
+					<div class="input-append">
+						<h:form id="bulletinReg">
+						 <p:growl id="messageGrowl" life="3500" severity="error,warn,fatal" sticky="true" escape="true"/>
+						<h:panelGrid columns="2">
+							<h:inputText id="bulletinMemberEmail" class="input-medium" value="#{bulletinMember.email}"/>
+							<h:commandButton id="bulletinMemberRegister" class="btn-u" value="Abone Ol" action="#{bulletinMemberRegistration.registerBulletinMember()}" />
+						</h:panelGrid>
+						</h:form>
+					</div>
 				</div>
 				<!--/span4-->
 

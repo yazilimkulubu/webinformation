@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
-
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Fırat Üniversitesi Yazılım Kulübü ACM Student Chapter |
 		Web Information System</title>
-
 	<!-- Meta -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,12 +30,10 @@
 		id="style_color" />
 	<link rel="stylesheet" href="/assets/css/themes/headers/default.html"
 		id="style_color-header-1" />
-</h:head>
+		
+	</h:head>
+	
 <h:body>
-	<!--=== Style Switcher ===-->
-	<!--/style-switcher-->
-	<!--=== End Style Switcher ===-->
-
 	<!--=== Top ===-->
 	<div class="top">
 		<div class="container">
@@ -68,7 +65,7 @@
 					<!-- /nav-collapse -->
 					<div class="nav-collapse collapse">
 						<ul class="nav top-2">
-							<li><a href="/">Anasayfa <b class="caret"></b>
+							<li><a href="/">Anasayfa
 							</a> <b class="caret-out"></b></li>
 							<li><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">ETKİNLİKLERİMİZ <b class="caret"></b>
@@ -86,7 +83,7 @@
 									<li><a href="/oracle">Oracle</a></li>
 									<li><a href="/microsoft">Microsoft .Net Platform</a></li>
 								</ul> <b class="caret-out"></b></li>
-							<li><a href="/script">SCRİPT<b class="caret"></b>
+							<li><a href="/script">SCRİPT
 							</a> <b class="caret-out"></b></li>
 							<li><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">Referanslarımız<b class="caret"></b>
@@ -105,7 +102,7 @@
 									<li><a href="/board">Yönetim Kurulu</a></li>
 									<li><a href="/supervisory">Denetleme Kurulu</a></li>
 								</ul> <b class="caret-out"></b></li>
-							<li><a href="/contact">İLETİŞİM <b class="caret"></b>
+							<li><a href="/contact">İLETİŞİM
 							</a> <b class="caret-out"></b></li>
 						</ul>
 					</div>
@@ -182,12 +179,15 @@
 					</div>
 					<p>Haber bültenimize abone olun ve en son haber, etkinlik,
 						eğitim, yarışma ve projeler hakkında güncel kalın!</p>
-					<form class="form-inline">
-						<div class="input-append">
-							<input type="text" placeholder="Email Adres" class="input-medium" />
-							<button class="btn-u">Abone Ol</button>
-						</div>
-					</form>
+					<div class="input-append">
+						<h:form id="bulletinReg">
+						 <p:growl id="messageGrowl" life="3500" severity="error,warn,fatal" sticky="true" escape="true"/>
+						<h:panelGrid columns="2">
+							<h:inputText id="bulletinMemberEmail" class="input-medium" value="#{bulletinMember.email}"/>
+							<h:commandButton id="bulletinMemberRegister" class="btn-u" value="Abone Ol" action="#{bulletinMemberRegistration.registerBulletinMember()}" />
+						</h:panelGrid>
+						</h:form>
+					</div>
 				</div>
 				<!--/span4-->
 				<div class="span4">
