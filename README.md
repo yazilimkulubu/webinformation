@@ -1,4 +1,4 @@
 webinformation
 ==============
 
-Yazılım Kulübü Web Information System
+Yazılım Kulübü ACM Student Chapter Web Information System
