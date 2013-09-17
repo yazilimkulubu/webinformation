@@ -8,7 +8,7 @@
 	<title>Fırat Üniversitesi Yazılım Kulübü ACM Student Chapter |
 		Web Information System</title>
 	<!-- Meta -->
-	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
@@ -146,16 +146,19 @@
 				<p>Fırat Üniversitesi Yazılım Kulübü ACM Student Chapter /
 					Sitemiz Yapım Aşamasındadır</p>
 				<br />
-				<form>
-					<label>İsim</label> <input type="text"
-						class="span7 border-radius-none" /> <label>Email <span
-						class="color-red">*</span></label> <input type="text"
-						class="span7 border-radius-none" /> <label>Mesaj</label>
-					<textarea rows="8" class="span10"></textarea>
-					<p>
-						<button type="submit" class="btn-u">Gönder</button>
-					</p>
-				</form>
+				
+				<label>İsim<span class="color-red">*</span></label>
+				<h:form id="contactMessage">
+				<p:growl id="messageGrowl" life="3500" severity="error,warn,fatal" sticky="true"/>
+				<h:inputText id="nameSurname" value="#{contactMail.nameSurname}" class="span7 border-radius-none" />
+				<label>Email<span class="color-red">*</span></label>
+				<h:inputText id="email" value="#{contactMail.fromAdress}" class="span7 border-radius-none"/>
+				<label>Mesaj<span class="color-red">*</span></label>
+				<h:inputTextarea id="text" value="#{contactMail.text}" class="span10" rows="8" />
+				<p>
+				<h:commandButton id="contactMailSend" action="#{contactMailSending.contactEmailSend()}" value="Gönder" class="btn-u" />
+				</p>
+				</h:form>
 			</div>
 			<!--/span9-->
 			<div class="span3">
@@ -264,7 +267,7 @@
 						eğitim, yarışma ve projeler hakkında güncel kalın!</p>
 					<div class="input-append">
 						<h:form id="bulletinReg">
-						 <p:growl id="messageGrowl" life="3500" severity="error,warn,fatal" sticky="true" escape="true"/>
+						 <p:growl id="messageGrowl" life="3500" severity="error,warn,fatal" sticky="true"/>
 						<h:panelGrid columns="2">
 							<h:inputText id="bulletinMemberEmail" class="input-medium" value="#{bulletinMember.email}"/>
 							<h:commandButton id="bulletinMemberRegister" class="btn-u" value="Abone Ol" action="#{bulletinMemberRegistration.registerBulletinMember()}" />

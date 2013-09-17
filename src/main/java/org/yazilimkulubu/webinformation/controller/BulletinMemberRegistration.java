@@ -16,8 +16,8 @@ import org.yazilimkulubu.webinformation.model.BulletinMember;
 /**
  * Created with JBoss Developer Studio 6.0 
  * User: Batuhan ÇIKRIKCI 
- * Date: 9/15/13
- * Time: 6:42 PM
+ * Date: 15/09/13
+ * Time: 18:42
  */
 
 @Stateful
@@ -38,20 +38,27 @@ public class BulletinMemberRegistration {
 	@Produces
 	@Named
 	public BulletinMember getBulletinMember() {
-		return bulletinMember;
+			return bulletinMember;
+			
 	}
 	
-	public void registerBulletinMember() throws Exception{
+	public void registerBulletinMember() {
+		
+		try {
 			entityManager.persist(bulletinMember);
 			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Kayıt işlemi başarıyla tamamlandı.","Kayıt işlemi başarıyla tamamlandı."));
 			bulletinMemberEvent.fire(bulletinMember);
 			initBulletinMemeber();
-			//facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Kayıtlı e-mail adresi!","Kayıtlı e-mail adresi!"));
+		} catch(Throwable throwable) {
+			throwable.printStackTrace();
+			entityManager.close();
+		    facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Kayıtlı e-mail adresi!","Kayıtlı e-mail adresi!"));
+		}
 	}
-
+	
 	@PostConstruct
 	public void initBulletinMemeber() {
-		bulletinMember = new BulletinMember();
+			bulletinMember = new BulletinMember();
 	}
 
 }

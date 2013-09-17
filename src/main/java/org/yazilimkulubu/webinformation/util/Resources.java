@@ -6,23 +6,26 @@ import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+
 /**
  * Created with JBoss Developer Studio 6.0 
  * User: Batuhan ÇIKRIKCI 
  * Date: 9/15/13
- * Time: 7:25 PM
+ * Time: 19:25
  */
 
-public class BulletinMemberResources {
+public class Resources {
 
 	@Produces
 	@PersistenceContext
 	private EntityManager entityManager;
+	
 
 	@Produces
 	@RequestScoped
 	public FacesContext produceFacesContext() {
-		return FacesContext.getCurrentInstance();
+			return FacesContext.getCurrentInstance();
+		
 	}
 
 }

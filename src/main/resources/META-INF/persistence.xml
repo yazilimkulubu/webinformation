@@ -4,7 +4,7 @@
 	xsi:schemaLocation="
         http://java.sun.com/xml/ns/persistence
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="primary" transaction-type="JTA" >
+	<persistence-unit name="primary" transaction-type="JTA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/datasources/PostgreSQLDS</jta-data-source>
 		<class>org.yazilimkulubu.webinformation.model.BulletinMember</class>
@@ -12,6 +12,7 @@
 			<!-- Properties for Hibernate -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />
+			
 		</properties>
 	</persistence-unit>
 </persistence>

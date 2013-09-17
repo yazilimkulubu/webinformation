@@ -16,8 +16,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 /**
  * Created with JBoss Developer Studio 6.0
  * User: Batuhan ÇIKRIKCI
- * Date: 9/15/13
- * Time: 6:08 PM
+ * Date: 15/09/13
+ * Time: 18:08
  */
 
 @Entity
@@ -48,11 +48,11 @@ public class BulletinMember implements Serializable {
 	}
 
 	public String getEmail() {
-		return email;
+			return email;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+			this.email = email;
 	}
 	
 }
