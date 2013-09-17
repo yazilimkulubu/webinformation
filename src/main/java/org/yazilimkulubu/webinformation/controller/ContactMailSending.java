@@ -8,6 +8,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.mail.SimpleEmail;
 import org.yazilimkulubu.webinformation.model.ContactMail;
@@ -24,6 +25,9 @@ public class ContactMailSending {
 	
 	@Inject
 	private FacesContext facesContext;
+	
+	@Inject
+	private HttpServletRequest httpServletRequest;
 		
 	private ContactMail contactMail;
 	
@@ -44,10 +48,11 @@ public class ContactMailSending {
 		simpleEmail.setAuthentication("contact.yazilim.kulubu@gmail.com", "***********");
 		try {
 			simpleEmail.addTo("contact@yazilimkulubu.org");
-			simpleEmail.setFrom(contactMail.getFromAdress(),contactMail.getNameSurname());
+			simpleEmail.setFrom(contactMail.getFromAdress(),contactMail.getNameSurname()+" ("+httpServletRequest.getRemoteAddr()+")");
 			simpleEmail.setSubject("Web Information Contact Page");
 			simpleEmail.setMsg(contactMail.getText());
 			simpleEmail.addCc(contactMail.getFromAdress());
+			simpleEmail.setCharset("UTF-8");
 			simpleEmail.send();
 			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"İletiniz başarıyla gönderildi.","İletiniz başarıyla gönderildi."));
 			

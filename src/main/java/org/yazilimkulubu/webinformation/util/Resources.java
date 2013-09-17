@@ -5,6 +5,7 @@ import javax.enterprise.inject.Produces;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.servlet.http.HttpServletRequest;
 
 
 /**
@@ -25,6 +26,13 @@ public class Resources {
 	@RequestScoped
 	public FacesContext produceFacesContext() {
 			return FacesContext.getCurrentInstance();
+		
+	}
+	
+	@Produces
+	@RequestScoped
+	public HttpServletRequest httpServletRequest(){
+		return (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		
 	}
 
