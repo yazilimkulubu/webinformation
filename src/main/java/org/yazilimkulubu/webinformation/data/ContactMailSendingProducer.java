@@ -1,13 +1,13 @@
-package org.yazilimkulubu.webinformation.controller;
+package org.yazilimkulubu.webinformation.data;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Stateful;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
+import org.yazilimkulubu.webinformation.controller.ContactMailSendingAsyncBean;
 import org.yazilimkulubu.webinformation.model.ContactMail;
 
 /**
@@ -18,9 +18,8 @@ import org.yazilimkulubu.webinformation.model.ContactMail;
  */
 
 @Model
-@Stateful
-public class ContactMailSending {
-	
+public class ContactMailSendingProducer {
+
 	private ContactMail contactMail;
 
 	@Produces
@@ -28,19 +27,22 @@ public class ContactMailSending {
 	public ContactMail getContactMail() {
 		return contactMail;
 	}
-	
+
 	@Inject
 	private HttpServletRequest httpServletRequest;
-	
+
 	@Inject
 	private ContactMailSendingAsyncBean contactMailSendingAsyncBean;
-	
-	public void contactEmailSend(){
-		contactMailSendingAsyncBean.contactEmailAsyncSend(httpServletRequest.getRemoteAddr(),contactMail.getNameSurname(),contactMail.getFromAdress(),contactMail.getText());
+
+	public void contactEmailSend() {
+		contactMailSendingAsyncBean.contactEmailAsyncSend(
+				httpServletRequest.getLocalAddr(),
+				contactMail.getNameSurname(), contactMail.getFromAdress(),
+				contactMail.getText());
 	}
-	
+
 	@PostConstruct
 	public void initContactMail() {
-			contactMail = new ContactMail();
+		contactMail = new ContactMail();
 	}
 }

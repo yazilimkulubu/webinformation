@@ -1,8 +1,7 @@
 package org.yazilimkulubu.webinformation.controller;
 
 import javax.ejb.Asynchronous;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 
 import org.apache.commons.mail.SimpleEmail;
 
@@ -13,8 +12,7 @@ import org.apache.commons.mail.SimpleEmail;
  * Time: 15:22
  */
 
-@Stateful
-@LocalBean
+@Stateless
 public class ContactMailSendingAsyncBean {
 		
 	@SuppressWarnings("deprecation")
@@ -38,7 +36,6 @@ public class ContactMailSendingAsyncBean {
 				simpleEmail = null;
 			
 		} catch (Exception e) {
-			System.out.println("14");
 			e.printStackTrace();
 		}
 		

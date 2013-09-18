@@ -22,7 +22,7 @@ import org.yazilimkulubu.webinformation.model.BulletinMember;
 
 @Stateful
 @Model
-public class BulletinMemberRegistration {
+public class BulletinMemberRegistrationBean {
 
 	@Inject
 	private EntityManager entityManager;
