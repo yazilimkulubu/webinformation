@@ -1,15 +1,10 @@
 package org.yazilimkulubu.webinformation.controller;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.Asynchronous;
-import javax.ejb.Stateless;
-import javax.enterprise.inject.Produces;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
-import javax.inject.Named;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateful;
 
 import org.apache.commons.mail.SimpleEmail;
-import org.yazilimkulubu.webinformation.model.ContactMail;
 
 /**
  * Created with JBoss Developer Studio 6.0 
@@ -18,23 +13,13 @@ import org.yazilimkulubu.webinformation.model.ContactMail;
  * Time: 15:22
  */
 
-@Stateless
+@Stateful
+@LocalBean
 public class ContactMailSendingAsyncBean {
-	
-	@Inject
-	private FacesContext facesContext;
-	
-	private ContactMail contactMail;
-	
-	@Produces
-	@Named
-	public ContactMail getContactMail() {
-		return contactMail;
-	}
 		
 	@SuppressWarnings("deprecation")
 	@Asynchronous
-	public void contactEmailAsyncSend(String fromIp){
+	public void contactEmailAsyncSend(String fromIp, String nameSurname, String fromAdress, String text){
 		
 		SimpleEmail simpleEmail = new SimpleEmail();
 		
@@ -42,24 +27,21 @@ public class ContactMailSendingAsyncBean {
 				simpleEmail.setHostName("smtp.gmail.com");
 				simpleEmail.setSmtpPort(465);
 				simpleEmail.setSSL(true);
-				simpleEmail.setAuthentication("contact.yazilim.kulubu@gmail.com", "*****");
+				simpleEmail.setAuthentication("contact.yazilim.kulubu@gmail.com", "yazilim23kulubu");
 				simpleEmail.addTo("contact@yazilimkulubu.org");
-				simpleEmail.setFrom(contactMail.getFromAdress(),contactMail.getNameSurname()+" ("+fromIp+")");
+				simpleEmail.setFrom(fromAdress,nameSurname+" ("+fromIp+")");
 				simpleEmail.setSubject("Web Information Contact Page");
-				simpleEmail.setMsg(contactMail.getText());
-				simpleEmail.addCc(contactMail.getFromAdress());
+				simpleEmail.setMsg(text);
+				simpleEmail.addCc(fromAdress);
 				simpleEmail.setCharset("UTF-8");
 				simpleEmail.send();
+				simpleEmail = null;
 			
 		} catch (Exception e) {
 			System.out.println("14");
 			e.printStackTrace();
 		}
-	}
-	
-	@PostConstruct
-	public void initContactMail() {
-			contactMail = new ContactMail();
-	}
+		
+	}	
 
 }

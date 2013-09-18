@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServletRequest;
 
-
 /**
  * Created with JBoss Developer Studio 6.0 
  * User: Batuhan ÇIKRIKCI 
@@ -34,5 +33,5 @@ public class Resources {
 		return (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		
 	}
-
+	
 }
