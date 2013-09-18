@@ -41,23 +41,23 @@ public class BulletinMemberRegistration {
 			return bulletinMember;
 			
 	}
-	
+
 	public void registerBulletinMember() {
-		
 		try {
 			entityManager.persist(bulletinMember);
 			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Kayıt işlemi başarıyla tamamlandı.","Kayıt işlemi başarıyla tamamlandı."));
 			bulletinMemberEvent.fire(bulletinMember);
-			initBulletinMemeber();
+			initBulletinMember();
 		} catch(Throwable throwable) {
 			throwable.printStackTrace();
 			entityManager.close();
-		    facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Kayıtlı e-mail adresi!","Kayıtlı e-mail adresi!"));
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Kayıtlı e-mail adresi!","Kayıtlı e-mail adresi!"));
 		}
+		
 	}
 	
 	@PostConstruct
-	public void initBulletinMemeber() {
+	public void initBulletinMember() {
 			bulletinMember = new BulletinMember();
 	}
 

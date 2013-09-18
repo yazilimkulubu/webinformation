@@ -18,7 +18,7 @@ public class ContactMail {
 	@Email(message="Lütfen geçerli bir e-mail adresi girin.")
 	private String fromAdress;
 	
-	@Size(min = 15,message="Mesajınız yeterli uzunlukta değil!")
+	@Size(min = 5,message="Mesajınız yeterli uzunlukta değil!")
 	private String text;
 	
 	@Size(min = 1, max = 25,message="İsim 1 - 25 karakter arasında olmalıdır!")
@@ -47,6 +47,4 @@ public class ContactMail {
 	public void setNameSurname(String nameSurname) {
 		this.nameSurname = nameSurname;
 	}
-	
-
 }

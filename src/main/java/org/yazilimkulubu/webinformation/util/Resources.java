@@ -20,13 +20,12 @@ public class Resources {
 	@Produces
 	@PersistenceContext
 	private EntityManager entityManager;
-	
 
 	@Produces
 	@RequestScoped
 	public FacesContext produceFacesContext() {
 			return FacesContext.getCurrentInstance();
-		
+			
 	}
 	
 	@Produces
