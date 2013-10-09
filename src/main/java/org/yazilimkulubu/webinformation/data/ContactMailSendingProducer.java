@@ -19,9 +19,19 @@ import org.yazilimkulubu.webinformation.model.ContactMail;
 
 @Model
 public class ContactMailSendingProducer {
+	
+	private String message;
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	private ContactMail contactMail;
-
+	
 	@Produces
 	@Named
 	public ContactMail getContactMail() {
@@ -34,11 +44,20 @@ public class ContactMailSendingProducer {
 	@Inject
 	private ContactMailSendingAsyncBean contactMailSendingAsyncBean;
 
-	public void contactEmailSend() {
-		contactMailSendingAsyncBean.contactEmailAsyncSend(
-				httpServletRequest.getLocalAddr(),
-				contactMail.getNameSurname(), contactMail.getFromAdress(),
-				contactMail.getText());
+	public void contactEmailSend(){
+		
+		contactMailSendingAsyncBean.setMailFrom(contactMail.getFromAdress());
+		contactMailSendingAsyncBean.setMailFromIp(httpServletRequest.getRemoteAddr());
+		contactMailSendingAsyncBean.setMailTo("contact@yazilimkulubu.org");
+		contactMailSendingAsyncBean.setNameSurname(contactMail.getNameSurname());
+		contactMailSendingAsyncBean.setSubject("Web Information System Contact Page");
+		contactMailSendingAsyncBean.setText(contactMail.getText());
+		contactMailSendingAsyncBean.contactEmailAsyncSend();
+		
+		contactMail.setFromAdress(null);
+		contactMail.setNameSurname(null);
+		contactMail.setText(null);
+		
 	}
 
 	@PostConstruct

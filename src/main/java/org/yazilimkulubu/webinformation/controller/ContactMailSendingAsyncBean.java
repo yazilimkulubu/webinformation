@@ -14,10 +14,63 @@ import org.apache.commons.mail.SimpleEmail;
 
 @Stateless
 public class ContactMailSendingAsyncBean {
+	
+	private String mailTo;
+	private String mailFrom;
+	private String mailFromIp;
+	private String subject;
+	private String text;
+	private String nameSurname;
 		
+	public String getMailTo() {
+		return mailTo;
+	}
+	
+	public void setMailTo(String mailTo) {
+		this.mailTo = mailTo;
+	}
+	
+	public String getMailFrom() {
+		return mailFrom;
+	}
+	
+	public void setMailFrom(String mailFrom) {
+		this.mailFrom = mailFrom;
+	}
+	
+	public String getMailFromIp() {
+		return mailFromIp;
+	}
+	public void setMailFromIp(String mailFromIp) {
+		this.mailFromIp = mailFromIp;
+	}
+	
+	public String getSubject() {
+		return subject;
+	}
+	
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public String getText() {
+		return text;
+	}
+	
+	public void setText(String text) {
+		this.text = text;
+	}
+	
+	public String getNameSurname() {
+		return nameSurname;
+	}
+
+	public void setNameSurname(String nameSurname) {
+		this.nameSurname = nameSurname;
+	}
+	
 	@SuppressWarnings("deprecation")
 	@Asynchronous
-	public void contactEmailAsyncSend(String fromIp, String nameSurname, String fromAdress, String text){
+	public void contactEmailAsyncSend(){
 		
 		SimpleEmail simpleEmail = new SimpleEmail();
 		
@@ -25,20 +78,20 @@ public class ContactMailSendingAsyncBean {
 				simpleEmail.setHostName("smtp.gmail.com");
 				simpleEmail.setSmtpPort(465);
 				simpleEmail.setSSL(true);
-				simpleEmail.setAuthentication("contact.yazilim.kulubu@gmail.com", "yazilim23kulubu");
-				simpleEmail.addTo("contact@yazilimkulubu.org");
-				simpleEmail.setFrom(fromAdress,nameSurname+" ("+fromIp+")");
-				simpleEmail.setSubject("Web Information Contact Page");
+				simpleEmail.setAuthentication("contact.yazilim.kulubu@gmail.com", "*******");
+				
+				simpleEmail.addTo(mailTo);
+				simpleEmail.setFrom(mailFrom,nameSurname+" ("+mailFromIp+")");
+				simpleEmail.setSubject(subject);
 				simpleEmail.setMsg(text);
-				simpleEmail.addCc(fromAdress);
+				simpleEmail.addCc(mailFrom);
 				simpleEmail.setCharset("UTF-8");
 				simpleEmail.send();
 				simpleEmail = null;
-			
+				
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}	
 
 }
