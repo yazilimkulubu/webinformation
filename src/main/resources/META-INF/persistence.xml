@@ -8,6 +8,10 @@
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 	<jta-data-source>java:jboss/datasources/PostgreSQLDS</jta-data-source>
 	<class>org.yazilimkulubu.webinformation.model.BulletinMember</class>
+	<class>org.yazilimkulubu.webinformation.model.Faculty</class>
+	<class>org.yazilimkulubu.webinformation.model.Depertmant</class>
+	<class>org.yazilimkulubu.webinformation.model.Member</class>
+	<class>org.yazilimkulubu.webinformation.model.Role</class>
 	<properties>
 		<!-- Properties for Hibernate -->
 		<property name="hibernate.hbm2ddl.auto" value="update" />

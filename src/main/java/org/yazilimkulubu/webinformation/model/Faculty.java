@@ -6,24 +6,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * Created with JBoss Developer Studio 6.0
  * User: Batuhan ÇIKRIKCI
- * Date: 15/09/13
- * Time: 18:08
+ * Date: 12/10/13
+ * Time: 16:35
  */
 
 @Entity
 @XmlRootElement
-@Table(uniqueConstraints = @UniqueConstraint(columnNames="email"))
-public class BulletinMember implements Serializable {
+@Table(uniqueConstraints = @UniqueConstraint(columnNames="name"))
+public class Faculty implements Serializable {
 	
 	/**
 	 * 
@@ -34,9 +34,11 @@ public class BulletinMember implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
-	@NotEmpty(message="e-mail adresi boş olamaz!")
-	@Email(message="Lütfen geçerli bir e-mail adresi girin.")
-	private String email;
+	@NotEmpty(message="Fakülte adı boş geçilemez!")
+	private String name;
+	
+	@OneToOne
+	private Depertmant depertmant;
 
 	public long getId() {
 		return id;
@@ -46,12 +48,20 @@ public class BulletinMember implements Serializable {
 		this.id = id;
 	}
 
-	public String getEmail() {
-			return email;
+	public String getName() {
+		return name;
 	}
 
-	public void setEmail(String email) {
-			this.email = email;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
+
+	public Depertmant getDepertmant() {
+		return depertmant;
+	}
+
+	public void setDepertmant(Depertmant depertmant) {
+		this.depertmant = depertmant;
+	}
+
 }
