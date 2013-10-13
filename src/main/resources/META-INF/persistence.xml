@@ -12,6 +12,7 @@
 	<class>org.yazilimkulubu.webinformation.model.Depertmant</class>
 	<class>org.yazilimkulubu.webinformation.model.Member</class>
 	<class>org.yazilimkulubu.webinformation.model.Role</class>
+	<class>org.yazilimkulubu.webinformation.model.Message</class>
 	<properties>
 		<!-- Properties for Hibernate -->
 		<property name="hibernate.hbm2ddl.auto" value="update" />

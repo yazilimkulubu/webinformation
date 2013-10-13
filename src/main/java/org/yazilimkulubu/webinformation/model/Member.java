@@ -62,6 +62,9 @@ public class Member implements Serializable {
 	
 	@OneToOne
 	private Role role;
+	
+	@OneToOne
+	private Message message;
 
 	public long getId() {
 		return id;
@@ -149,6 +152,14 @@ public class Member implements Serializable {
 
 	public void setRole(Role role) {
 		this.role = role;
-	}	
+	}
+
+	public Message getMessage() {
+		return message;
+	}
+
+	public void setMessage(Message message) {
+		this.message = message;
+	}
 
 }

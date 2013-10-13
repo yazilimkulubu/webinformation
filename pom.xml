@@ -5,7 +5,7 @@
 
 	<groupId>org.yazilimkulubu</groupId>
 	<artifactId>webinformation</artifactId>
-	<version>0.9-SNAPSHOT</version>
+	<version>1.0.0 - Alpha</version>
 	<packaging>war</packaging>
 	<name>Yazılım Kulübü ASC Student Chapter Web Informaiton System</name>
 
