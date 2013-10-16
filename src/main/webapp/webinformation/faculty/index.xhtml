@@ -184,7 +184,7 @@ body {
 							}
 				</script>
 
-				<p:fieldset legend="Menü">
+				<p:fieldset legend="Menü" >
 					<h:form id="menu">
 						<p:panelMenu style="width:200px; allign:center;">
 							<p:submenu label="Üyelik İşlemleri">
@@ -201,10 +201,10 @@ body {
 								<p:menuitem value="Blog Girdi" icon="ui-icon-document"
 									url="/webinformation/blog" />
 							</p:submenu>
-							<p:submenu label="Diğer İşlemler">
+							<p:submenu styleClass="active" label="Diğer İşlemler">
 								<p:menuitem value="Bölüm Bilgileri" icon="ui-icon-suitcase"
 									url="/webinformation/department" />
-								<p:menuitem value="Fakülte Bilgileri" icon="ui-icon-home"
+								<p:menuitem styleClass="ui-state-active" value="Fakülte Bilgileri" icon="ui-icon-home"
 									url="/webinformation/faculty" />
 									<p:menuitem value="Görev Bilgileri" icon="ui-icon-clipboard"
 									url="/webinformation/role" />
@@ -222,13 +222,21 @@ body {
 			<div id="right-content">
 				<p:fieldset legend="Detay">
 
-					<h:form id="newMember">
+					<h:form id="newFaculty">
+					<h:panelGrid columns="2">
+					<h:outputLabel value="Fakülte Adı: " />
+					<p:inputText id="facultyName" value="#{faculty.name}" />
+					<p:commandButton id="registerFaculty" value="Ekle" action="#{facultyRegistrationBean.registerFaculty()}" update=":newFaculty" />
+					</h:panelGrid>
+					<p:messages id="registerFacultyMessages" showDetail="true" autoUpdate="true" closable="true" />
+
 					</h:form>
 
 				</p:fieldset>
 			</div>
 		</div>
 	</div>
+
 
 </h:body>
 </html>

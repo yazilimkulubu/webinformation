@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
-import org.yazilimkulubu.webinformation.controller.ContactMailSendingAsyncBean;
+import org.yazilimkulubu.webinformation.controller.mail.ContactMailSendingAsyncBean;
 import org.yazilimkulubu.webinformation.model.ContactMail;
 
 /**

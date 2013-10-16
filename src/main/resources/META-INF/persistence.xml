@@ -9,7 +9,7 @@
 	<jta-data-source>java:jboss/datasources/PostgreSQLDS</jta-data-source>
 	<class>org.yazilimkulubu.webinformation.model.BulletinMember</class>
 	<class>org.yazilimkulubu.webinformation.model.Faculty</class>
-	<class>org.yazilimkulubu.webinformation.model.Depertmant</class>
+	<class>org.yazilimkulubu.webinformation.model.Department</class>
 	<class>org.yazilimkulubu.webinformation.model.Member</class>
 	<class>org.yazilimkulubu.webinformation.model.Role</class>
 	<class>org.yazilimkulubu.webinformation.model.Message</class>

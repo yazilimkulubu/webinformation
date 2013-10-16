@@ -1,4 +1,4 @@
-package org.yazilimkulubu.webinformation.controller;
+package org.yazilimkulubu.webinformation.controller.mail;
 
 import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
@@ -78,7 +78,7 @@ public class ContactMailSendingAsyncBean {
 				simpleEmail.setHostName("smtp.gmail.com");
 				simpleEmail.setSmtpPort(465);
 				simpleEmail.setSSL(true);
-				simpleEmail.setAuthentication("contact.yazilim.kulubu@gmail.com", "*******");
+				simpleEmail.setAuthentication("contact.yazilim.kulubu@gmail.com", "yazilim23kulubu");
 				
 				simpleEmail.addTo(mailTo);
 				simpleEmail.setFrom(mailFrom,nameSurname+" ("+mailFromIp+")");

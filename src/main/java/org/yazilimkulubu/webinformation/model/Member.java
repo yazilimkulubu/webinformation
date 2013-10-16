@@ -1,6 +1,7 @@
 package org.yazilimkulubu.webinformation.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -25,7 +27,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @XmlRootElement
-@Table(uniqueConstraints = @UniqueConstraint(columnNames={"email","membernumber","depertmantnumber"}))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames={"email","membernumber","departmentnumber"}))
 public class Member implements Serializable {
 
 	/**
@@ -40,7 +42,7 @@ public class Member implements Serializable {
 	@NotEmpty(message="Üye numarası boş geçilemez")
 	private int memberNumber;
 	
-	private long depertmantNumber;
+	private long departmentNumber;
 	
 	private String name;
 	
@@ -53,8 +55,8 @@ public class Member implements Serializable {
 	private String password;
 	
 	@ManyToOne
-	@JoinColumn(name="Member_FK")
-	private Depertmant depertmant;
+	@JoinColumn(name="department_id")
+	private Department department;
 	
 	private char grade;
 	
@@ -63,8 +65,11 @@ public class Member implements Serializable {
 	@OneToOne
 	private Role role;
 	
-	@OneToOne
-	private Message message;
+	@OneToMany(mappedBy="senderMember")
+	private List<Message> submittedMessages;
+	
+	@OneToMany(mappedBy="submitedMember")
+	private List<Message> fromMessages;
 
 	public long getId() {
 		return id;
@@ -82,12 +87,12 @@ public class Member implements Serializable {
 		this.memberNumber = memberNumber;
 	}
 
-	public long getDepertmantNumber() {
-		return depertmantNumber;
+	public long getdepartmentNumber() {
+		return departmentNumber;
 	}
 
-	public void setDepertmantNumber(long depertmantNumber) {
-		this.depertmantNumber = depertmantNumber;
+	public void setdepartmentNumber(long departmentNumber) {
+		this.departmentNumber = departmentNumber;
 	}
 
 	public String getName() {
@@ -122,12 +127,12 @@ public class Member implements Serializable {
 		this.password = password;
 	}
 
-	public Depertmant getDepertmant() {
-		return depertmant;
+	public Department getDepartment() {
+		return department;
 	}
 
-	public void setDepertmant(Depertmant depertmant) {
-		this.depertmant = depertmant;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 	public char getGrade() {
@@ -154,12 +159,20 @@ public class Member implements Serializable {
 		this.role = role;
 	}
 
-	public Message getMessage() {
-		return message;
+	public List<Message> getSubmittedMessages() {
+		return submittedMessages;
 	}
 
-	public void setMessage(Message message) {
-		this.message = message;
+	public void setSubmittedMessages(List<Message> submittedMessages) {
+		this.submittedMessages = submittedMessages;
+	}
+
+	public List<Message> getFromMessages() {
+		return fromMessages;
+	}
+
+	public void setFromMessages(List<Message> fromMessages) {
+		this.fromMessages = fromMessages;
 	}
 
 }

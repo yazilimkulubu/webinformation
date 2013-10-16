@@ -33,11 +33,11 @@ public class Message implements Serializable {
 	private String content;
 	
 	@ManyToOne
-	@JoinColumn(name="MessageSender_FK")
+	@JoinColumn(name="sender_member_id")
 	private Member senderMember;
 	
 	@ManyToOne
-	@JoinColumn(name="MessageSubmitter_FK")
+	@JoinColumn(name="submited_member_id")
 	private Member submitedMember;
 
 	public long getId() {
@@ -71,5 +71,5 @@ public class Message implements Serializable {
 	public void setSubmitedMember(Member submitedMember) {
 		this.submitedMember = submitedMember;
 	}
-
+	
 }

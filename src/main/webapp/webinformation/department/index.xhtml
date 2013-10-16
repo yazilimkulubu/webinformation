@@ -201,8 +201,8 @@ body {
 								<p:menuitem value="Blog Girdi" icon="ui-icon-document"
 									url="/webinformation/blog" />
 							</p:submenu>
-							<p:submenu label="Diğer İşlemler">
-								<p:menuitem value="Bölüm Bilgileri" icon="ui-icon-suitcase"
+							<p:submenu styleClass="active" label="Diğer İşlemler">
+								<p:menuitem styleClass="ui-state-active" value="Bölüm Bilgileri" icon="ui-icon-suitcase"
 									url="/webinformation/department" />
 								<p:menuitem value="Fakülte Bilgileri" icon="ui-icon-home"
 									url="/webinformation/faculty" />
@@ -222,13 +222,27 @@ body {
 			<div id="right-content">
 				<p:fieldset legend="Detay">
 
-					<h:form id="newMember">
+					<h:form id="newDepartment">
+					<h:panelGrid columns="2">
+					<p:outputLabel value="Fakülte: " />
+					
+					<p:selectOneMenu id="facultySelectMenu" value="#{departmentRegistrationBean.selectedFacultyId}" >  
+            			<f:selectItem itemLabel="Seçim" itemValue="-1" />  
+            			<f:selectItems value="#{faculties}"  var="_faculty" itemLabel="#{_faculty.name}" itemValue="#{_faculty.id}"/>
+        			</p:selectOneMenu>
+        			
+        			<p:outputLabel value="Bölüm: " />
+					<p:inputText id="departmentName" value="#{department.name}"/>
+					<p:commandButton id="registerDepartment" value="Ekle" action="#{departmentRegistrationBean.registerDepartment()}" update=":newDepartment" />
+					</h:panelGrid>
+					<p:messages id="registerDepartmentMessages"  showDetail="true" autoUpdate="true" closable="true" />
 					</h:form>
 
 				</p:fieldset>
 			</div>
 		</div>
 	</div>
+
 
 </h:body>
 </html>

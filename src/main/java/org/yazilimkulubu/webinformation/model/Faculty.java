@@ -1,12 +1,13 @@
 package org.yazilimkulubu.webinformation.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -36,9 +37,9 @@ public class Faculty implements Serializable {
 	
 	@NotEmpty(message="Fakülte adı boş geçilemez!")
 	private String name;
-	
-	@OneToOne
-	private Depertmant depertmant;
+
+	@OneToMany(mappedBy="faculty")
+	private List<Department> departments;
 
 	public long getId() {
 		return id;
@@ -56,12 +57,12 @@ public class Faculty implements Serializable {
 		this.name = name;
 	}
 
-	public Depertmant getDepertmant() {
-		return depertmant;
+	public List<Department> getdepartments() {
+		return departments;
 	}
 
-	public void setDepertmant(Depertmant depertmant) {
-		this.depertmant = depertmant;
+	public void setdepartments(List<Department> departments) {
+		this.departments = departments;
 	}
-
+	
 }

@@ -1,6 +1,7 @@
 package org.yazilimkulubu.webinformation.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,9 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -24,8 +23,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @XmlRootElement
-@Table(uniqueConstraints = @UniqueConstraint(columnNames="name"))
-public class Depertmant implements Serializable {
+public class Department implements Serializable {
 	
 	/**
 	 * 
@@ -40,11 +38,11 @@ public class Depertmant implements Serializable {
 	private String name;
 	
 	@ManyToOne
-	@JoinColumn(name="Depertmant_FK")
+	@JoinColumn(name="faculty_id")
 	private Faculty faculty;
 	
-	@OneToOne
-	private Member member;
+	@OneToMany(mappedBy="department")
+	private List<Member> members;
 
 	public long getId() {
 		return id;
@@ -70,12 +68,12 @@ public class Depertmant implements Serializable {
 		this.faculty = faculty;
 	}
 
-	public Member getMember() {
-		return member;
+	public List<Member> getMembers() {
+		return members;
 	}
 
-	public void setMember(Member member) {
-		this.member = member;
+	public void setMembers(List<Member> members) {
+		this.members = members;
 	}
 	
 

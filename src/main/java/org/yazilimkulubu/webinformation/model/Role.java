@@ -36,7 +36,7 @@ public class Role implements Serializable {
 	private String name;
 	
 	@ManyToOne
-	@JoinColumn(name="Role_FK")
+	@JoinColumn(name="member_id")
 	private Member member;
 
 	public long getId() {
@@ -62,5 +62,7 @@ public class Role implements Serializable {
 	public void setMember(Member member) {
 		this.member = member;
 	}
+
+	
 
 }
